@@ -55,7 +55,6 @@ public:
 
 private:
   std::shared_ptr<CommandModel> m_pCommander;
-  dd;
   std::shared_ptr<CommandView> m_pExecuter;
   std::shared_ptr<Logger> m_pLogger;
 
