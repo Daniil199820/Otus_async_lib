@@ -5,10 +5,10 @@
 
 class Logger{
 public:
-    static Logger& getInstance(){
-        static Logger instance;
-        return instance;
-    }
+    //static Logger& getInstance(){
+    //    static Logger instance;
+    //    return instance;
+    //}
 
     void open_log(const std::string& filename){
         close_log();
@@ -34,10 +34,6 @@ private:
     bool flag_opened_file = false;
     
     Logger() = default;
-    Logger(const Logger& root) = delete;
-    Logger& operator=(const Logger&) = delete;
-    Logger(Logger&& root) = delete;
-    Logger& operator=(Logger&&) = delete;
 
     ~Logger() = default;
 
