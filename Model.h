@@ -115,6 +115,8 @@ private:
 
     std::unique_ptr<Storage> store;
 
+    std::unique_ptr<Logger> logger;
+
     void begin(){
         if(!app.get()->begin()){
             store.get()->pull_commands();
@@ -149,14 +151,13 @@ public:
             }
     }
 
-    CommandModel(int block_size){
+    CommandModel(int block_size, std::unique_ptr<Storage> store):store(std::move(store)),logger(std::move(logger)){
         app = std::make_unique<Application>(block_size);  
-        store = std::make_unique<Storage>();
         app.get()->set_current(ICommmandHandlerPtr{new StaticState()});
     }
 
     Storage* get_ref_store(){
-    return store.get();
+        return store.get();
     }
 
     int setCommand(const std::string& cur_command){

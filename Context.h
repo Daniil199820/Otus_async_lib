@@ -6,18 +6,17 @@
 #include <condition_variable>
 #include "Model.h"
 #include "CommandView.h"
-
+#include "Logger.h"
 
 class Context
 {
 public:
-  Context(std::size_t _BlockSize,
-    std::ostream& _osLoggerOut, 
-    std::ostream& _osMainMetricsOut, 
-    std::ostream& _osLogMetricsOut, 
-    std::ostream& _oFileMetricsOut)
+  Context(std::size_t BlockSize)
     :m_bDone{false},m_thread{&Context::ParceBuffer,this}{
-        
+        auto store = std::make_unique<Storage>();
+        Logger_viewer = std::make_unique<Logger>(store);
+        Console_viewer = std::make_unique<CommandView>(store);
+        Command_prcer = std::make_unique<CommandModel>(BlockSize,store);   
     }
     
 
@@ -29,9 +28,9 @@ public:
       }
   }
 
-  void SetBuffer(const char* a_Buffer, std::size_t a_szSize){
+  void SetBuffer(const char* _Buffer, std::size_t _szSize){
     {std::unique_lock<std::mutex> lock(m_streamLock);
-      _ssInputStream.write(a_Buffer, a_szSize);
+      _ssInputStream.write(_Buffer, _szSize);
     }
 
     m_bNotified = true;
@@ -45,18 +44,18 @@ public:
       m_streamCheck.wait(locker,[&](){return m_bNotified || m_bDone;});
       std::string tempLine;
       while( std::getline(_ssInputStream,tempLine)){
-        m_pCommander->setCommand(std::move(tempLine));
+        Command_prcer->setCommand(std::move(tempLine));
       }
-      m_pCommander->end_of_f();
+      Command_prcer->end_of_f();
       _ssInputStream.clear();
       m_bNotified = false;
     }
   }
 
 private:
-  std::shared_ptr<CommandModel> m_pCommander;
-  std::shared_ptr<CommandView> m_pExecuter;
-  std::shared_ptr<Logger> m_pLogger;
+  std::unique_ptr<CommandModel> Command_prcer;
+  std::unique_ptr<CommandView> Console_viewer;
+  std::unique_ptr<Logger> Logger_viewer;
 
   std::stringstream _ssInputStream;
 
