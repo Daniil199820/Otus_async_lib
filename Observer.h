@@ -1,6 +1,7 @@
 #pragma once
 #include<vector>
-
+#include<thread>
+#include<mutex>
 class Observer{
 public:
     virtual void update() = 0;
@@ -18,5 +19,6 @@ public:
         }
     }
 private:
-    std::vector<Observer*>_observers;    
+    std::vector<Observer*>_observers;   
+    std::mutex lock_actions_command; 
 };

@@ -5,16 +5,22 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 project(bulk VERSION ${PROJECT_VERSION})
 
-
+add_library(async SHARED async.cpp)
+add_library(_State_mch State_machine.cpp)
 add_executable(bulk main.cpp)
 
-set_target_properties(bulk PROPERTIES
+
+
+set_target_properties(bulk async _State_mch PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
 
 
-
+target_link_libraries(bulk PRIVATE  
+    async
+    _State_mch
+)
 
 
 

@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/daniil/cpp/Otus_async_lib/build",
+  "command": "/usr/bin/g++ -Dasync_EXPORTS  -g -fPIC -std=gnu++17 -o CMakeFiles/async.dir/async.cpp.o -c /home/daniil/cpp/Otus_async_lib/async.cpp",
+  "file": "/home/daniil/cpp/Otus_async_lib/async.cpp"
+},
+{
+  "directory": "/home/daniil/cpp/Otus_async_lib/build",
+  "command": "/usr/bin/g++   -g -std=gnu++17 -o CMakeFiles/_State_mch.dir/State_machine.cpp.o -c /home/daniil/cpp/Otus_async_lib/State_machine.cpp",
+  "file": "/home/daniil/cpp/Otus_async_lib/State_machine.cpp"
+},
+{
+  "directory": "/home/daniil/cpp/Otus_async_lib/build",
+  "command": "/usr/bin/g++  -I/home/daniil/cpp/Otus_async_lib -g -Wall -Wextra -pedantic -std=gnu++17 -o CMakeFiles/bulk.dir/main.cpp.o -c /home/daniil/cpp/Otus_async_lib/main.cpp",
+  "file": "/home/daniil/cpp/Otus_async_lib/main.cpp"
+}
+]
