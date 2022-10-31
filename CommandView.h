@@ -21,8 +21,9 @@ public:
 
     void update(std::deque<Element>& cont) override{
 
-        std::unique_lock<std::mutex> lock(lock_viewer);
+        {std::unique_lock<std::mutex> lock(lock_viewer);
             container = cont;
+        }
        // std::cout<<"update in command view\n";
         commands_wait.notify_one();
     }
@@ -32,17 +33,14 @@ public:
             std::unique_lock<std::mutex>locker(lock_viewer);
             commands_wait.wait(locker,[&](){return !container.empty() || m_bDone;});
             std::cout<<"we are in com_viewer-"<<container.size()<<"\n";
-            if(container.size()){
-                std::cout<<"bulk: ";
-                std::cout<<container[0]._cmd;
+            if(!container.empty()){
+                std::cout<<"bulk: "<<container[0]._cmd;
             for(size_t i=1;i<container.size();++i){
-                std::cout<<", ";
-                std::cout<<container[i]._cmd;
+                std::cout<<", "<<container[i]._cmd;
             }
                 std::cout<< '\n';
+                container.clear();
             }
-            commands_is_ready = false;
-            container.clear();
         }
     }
 private:

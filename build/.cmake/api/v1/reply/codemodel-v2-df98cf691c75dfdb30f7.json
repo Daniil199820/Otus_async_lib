@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-6b921f83700e9e0482f0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "bulk",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "_State_mch::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_State_mch-Debug-8a071f4f6de7871574a6.json",
+					"name" : "_State_mch",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "async::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-async-Debug-2d94f18c3a051fa66692.json",
+					"name" : "async",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "bulk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-bulk-Debug-8dd98eebc2177d551ff0.json",
+					"name" : "bulk",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/daniil/cpp/Otus_async_lib/build",
+		"source" : "/home/daniil/cpp/Otus_async_lib"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

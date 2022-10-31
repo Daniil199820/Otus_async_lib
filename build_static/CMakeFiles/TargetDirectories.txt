@@ -1,0 +1,11 @@
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/async.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/_State_mch.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/bulk.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/package.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/package_source.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/edit_cache.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/rebuild_cache.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/list_install_components.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/install.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/install/local.dir
+/home/daniil/cpp/Otus_async_lib/build_static/CMakeFiles/install/strip.dir
