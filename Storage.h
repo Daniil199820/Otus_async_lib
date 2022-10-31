@@ -7,10 +7,7 @@
 #include "Logger.h"
 #include <chrono>
 
-struct Element{
-std::string _cmd;
-int64_t _time;
-};
+
 
 class Storage:public Observable{
 public:
@@ -23,7 +20,7 @@ public:
 
     void pull_commands(){
         std::unique_lock<std::mutex> lock (lock_actions_command);
-        notifyUpdate();
+        notifyUpdate(container_commands);
         container_commands.clear();   
     }
     

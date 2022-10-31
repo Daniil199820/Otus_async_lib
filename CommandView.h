@@ -6,7 +6,7 @@
 #include <iostream>
 class CommandView:public Observer{
 public: 
-    CommandView(std::shared_ptr<Storage> store):store(store),m_bDone{false},
+    CommandView(std::shared_ptr<Storage> store):store(store),m_bDone(false),
     thread_executer(&CommandView::execute,this){
         store.get()->addObserver(this);
     }
@@ -19,21 +19,19 @@ public:
         }
     }
 
-    void update() override{
+    void update(std::deque<Element>& cont) override{
 
-       // {std::unique_lock<std::mutex> lock(lock_viewer);
-        container = store->container_commands;
-        //}
-        std::cout<<"update in command view\n";
-        commands_is_ready = true;
+        std::unique_lock<std::mutex> lock(lock_viewer);
+            container = cont;
+       // std::cout<<"update in command view\n";
         commands_wait.notify_one();
     }
 
     void execute(){
         while(!m_bDone){
             std::unique_lock<std::mutex>locker(lock_viewer);
-            commands_wait.wait(locker,[&](){return container.size() || m_bDone;});
-            //std::cout<<"we are in com_viewer-"<<container.size()<<"\n";
+            commands_wait.wait(locker,[&](){return !container.empty() || m_bDone;});
+            std::cout<<"we are in com_viewer-"<<container.size()<<"\n";
             if(container.size()){
                 std::cout<<"bulk: ";
                 std::cout<<container[0]._cmd;

@@ -5,8 +5,8 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 
 project(bulk VERSION ${PROJECT_VERSION})
 
-add_library(async SHARED async.cpp)
-add_library(_State_mch State_machine.cpp)
+add_library(async async.cpp)
+add_library(_State_mch  State_machine.cpp)
 add_executable(bulk main.cpp)
 
 
@@ -33,7 +33,7 @@ target_include_directories(
 
 if (MSVC)
     target_compile_options(bulk PRIVATE
-        /W4
+        /W3
     )
 else ()
     target_compile_options(bulk PRIVATE

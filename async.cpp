@@ -35,7 +35,7 @@ void disconnect(handle_t handle) {
     std::lock_guard<std::mutex> lock(contex_lock);
     auto iter = map_contexts.find(handle);
     if(iter!=map_contexts.end()){
-       std::cout<<"disconnect here\n";
+       //std::cout<<"disconnect here\n";
         map_contexts.erase(iter);
     }
 }

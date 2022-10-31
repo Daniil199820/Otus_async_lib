@@ -24,12 +24,13 @@ public:
     
 
   void SetBuffer(const char* _Buffer, std::size_t _szSize){
-    {std::unique_lock<std::mutex> lock(m_streamLock);
-        std::cout<<"Set_buffer_1_Contex\n";
+    std::unique_lock<std::mutex> lock(m_streamLock);
+       // std::cout<<"Set_buffer_1_Contex\n";
       _ssInputStream.write(_Buffer, _szSize);
-    }
-    std::cout<<"Set_buffer_2_Contex\n";
+    
+   // std::cout<<"Set_buffer_2_Contex\n";
     m_bNotified = true;
+    
     m_streamCheck.notify_one();
     
   }
@@ -40,12 +41,11 @@ public:
     while(!m_bDone){
       std::unique_lock<std::mutex> locker(m_streamLock);
       m_streamCheck.wait(locker,[&](){return m_bNotified || m_bDone;});
-      std::cout<< "we are after cond_var\n";
+      //std::cout<< "we are after cond_var\n";
       std::string tempLine;
       while( std::getline(_ssInputStream,tempLine)){
         Command_prcer->setCommand(std::move(tempLine));
       }
-      Command_prcer->end_of_f();
       _ssInputStream.clear();
       m_bNotified = false;
     }
@@ -55,8 +55,9 @@ public:
     // std::cout<<"destructor";
       m_bDone = true;
       m_streamCheck.notify_all();
+      Command_prcer->end_of_f();
       if (m_thread.joinable()){
-        std::cout<<"destructor";
+        //std::cout<<"destructor";
         m_thread.join();
       }
   }
