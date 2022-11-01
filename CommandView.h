@@ -3,6 +3,8 @@
 #include "Observer.h"
 #include "Storage.h"
 #include "Logger.h"
+#include <atomic>
+#include <thread>
 #include <iostream>
 class CommandView:public Observer{
 public: 
@@ -17,6 +19,8 @@ public:
         if(thread_executer.joinable()){
             thread_executer.join();
         }
+        std::cout<<counter_1<<"\n";
+        std::cout<<counter_2<<"\n";
     }
 
     void update(std::deque<Element>& cont) override{
@@ -24,6 +28,7 @@ public:
         {std::unique_lock<std::mutex> lock(lock_viewer);
             container = cont;
         }
+        counter_1 = container.size() + counter_1;
        // std::cout<<"update in command view\n";
         commands_wait.notify_one();
     }
@@ -32,7 +37,7 @@ public:
         while(!m_bDone){
             std::unique_lock<std::mutex>locker(lock_viewer);
             commands_wait.wait(locker,[&](){return !container.empty() || m_bDone;});
-            std::cout<<"we are in com_viewer-"<<container.size()<<"\n";
+            counter_2 = container.size() + counter_2;
             if(!container.empty()){
                 std::cout<<"bulk: "<<container[0]._cmd;
             for(size_t i=1;i<container.size();++i){
@@ -51,4 +56,6 @@ private:
     std::condition_variable commands_wait;
     std::atomic<bool> commands_is_ready = false;
     std::thread thread_executer;
+    int counter_1 = 0;
+    int counter_2 = 0;
 };
