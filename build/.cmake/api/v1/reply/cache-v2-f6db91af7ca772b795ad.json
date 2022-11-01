@@ -2,6 +2,50 @@
 	"entries" : 
 	[
 		{
+			"name" : "CMAKE_ADDR2LINE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/addr2line"
+		},
+		{
+			"name" : "CMAKE_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/ar"
+		},
+		{
+			"name" : "CMAKE_BUILD_TYPE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "STRING",
+			"value" : "Debug"
+		},
+		{
 			"name" : "CMAKE_CACHEFILE_DIR",
 			"properties" : 
 			[
@@ -11,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "d:/Otus_async_lib/build"
+			"value" : "/home/daniil/cpp/Otus_async_lib/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -35,7 +79,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "14"
+			"value" : "22"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -50,6 +94,22 @@
 			"value" : "1"
 		},
 		{
+			"name" : "CMAKE_COLOR_MAKEFILE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable/Disable color output during build."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
+		},
+		{
 			"name" : "CMAKE_COMMAND",
 			"properties" : 
 			[
@@ -59,19 +119,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/CMake/bin/cmake.exe"
-		},
-		{
-			"name" : "CMAKE_CONFIGURATION_TYPES",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Semicolon separated list of supported configuration types, only supports Debug, Release, MinSizeRel, and RelWithDebInfo, anything else will be ignored."
-				}
-			],
-			"type" : "STRING",
-			"value" : "Debug;Release;MinSizeRel;RelWithDebInfo"
+			"value" : "/usr/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -83,7 +131,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/CMake/bin/cpack.exe"
+			"value" : "/usr/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -95,7 +143,55 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/CMake/bin/ctest.exe"
+			"value" : "/usr/bin/ctest"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "CXX compiler"
+				}
+			],
+			"type" : "STRING",
+			"value" : "/usr/bin/g++"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ar-11"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ranlib-11"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -111,7 +207,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_DEBUG",
@@ -127,7 +223,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MDd /Zi /Ob0 /Od /RTC1"
+			"value" : "-g"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_MINSIZEREL",
@@ -143,7 +239,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MD /O1 /Ob1 /DNDEBUG"
+			"value" : "-Os -DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_RELEASE",
@@ -159,7 +255,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MD /O2 /Ob2 /DNDEBUG"
+			"value" : "-O3 -DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS_RELWITHDEBINFO",
@@ -175,10 +271,10 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MD /Zi /O2 /Ob1 /DNDEBUG"
+			"value" : "-O2 -g -DNDEBUG"
 		},
 		{
-			"name" : "CMAKE_CXX_STANDARD_LIBRARIES",
+			"name" : "CMAKE_C_COMPILER",
 			"properties" : 
 			[
 				{
@@ -187,11 +283,43 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Libraries linked by default with all C++ applications."
+					"value" : "C compiler"
 				}
 			],
 			"type" : "STRING",
-			"value" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib"
+			"value" : "/usr/bin/gcc"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ar-11"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ranlib-11"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -207,7 +335,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/DWIN32 /D_WINDOWS /W3"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_C_FLAGS_DEBUG",
@@ -223,7 +351,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MDd /Zi /Ob0 /Od /RTC1"
+			"value" : "-g"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS_MINSIZEREL",
@@ -239,7 +367,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MD /O1 /Ob1 /DNDEBUG"
+			"value" : "-Os -DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS_RELEASE",
@@ -255,7 +383,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MD /O2 /Ob2 /DNDEBUG"
+			"value" : "-O3 -DNDEBUG"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS_RELWITHDEBINFO",
@@ -271,10 +399,10 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/MD /Zi /O2 /Ob1 /DNDEBUG"
+			"value" : "-O2 -g -DNDEBUG"
 		},
 		{
-			"name" : "CMAKE_C_STANDARD_LIBRARIES",
+			"name" : "CMAKE_DLLTOOL",
 			"properties" : 
 			[
 				{
@@ -283,11 +411,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Libraries linked by default with all C applications."
+					"value" : "Path to a program."
 				}
 			],
-			"type" : "STRING",
-			"value" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib"
+			"type" : "FILEPATH",
+			"value" : "CMAKE_DLLTOOL-NOTFOUND"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -299,7 +427,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Unknown"
+			"value" : "ELF"
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS",
@@ -315,7 +443,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/machine:X86"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_DEBUG",
@@ -331,7 +459,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/debug /INCREMENTAL"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL",
@@ -347,7 +475,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/INCREMENTAL:NO"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_RELEASE",
@@ -363,7 +491,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/INCREMENTAL:NO"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO",
@@ -379,7 +507,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/debug /INCREMENTAL"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
@@ -415,7 +543,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Visual Studio 15 2017"
+			"value" : "Unix Makefiles"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_INSTANCE",
@@ -427,7 +555,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_GENERATOR_PLATFORM",
@@ -439,7 +567,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "win32"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_GENERATOR_TOOLSET",
@@ -451,7 +579,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "host=x86"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_HOME_DIRECTORY",
@@ -463,7 +591,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "D:/Otus_async_lib"
+			"value" : "/home/daniil/cpp/Otus_async_lib"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -475,7 +603,19 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/bulk"
+			"value" : "/usr/local"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SO_NO_EXE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Install .so files without execute permission."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -491,7 +631,23 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx86/x86/link.exe"
+			"value" : "/usr/bin/ld"
+		},
+		{
+			"name" : "CMAKE_MAKE_PROGRAM",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gmake"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -507,7 +663,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/machine:X86"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_DEBUG",
@@ -523,7 +679,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/debug /INCREMENTAL"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL",
@@ -539,7 +695,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/INCREMENTAL:NO"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELEASE",
@@ -555,7 +711,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/INCREMENTAL:NO"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO",
@@ -571,10 +727,10 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/debug /INCREMENTAL"
+			"value" : ""
 		},
 		{
-			"name" : "CMAKE_MT",
+			"name" : "CMAKE_NM",
 			"properties" : 
 			[
 				{
@@ -587,7 +743,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.17763.0/x86/mt.exe"
+			"value" : "/usr/bin/nm"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -600,6 +756,38 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_OBJCOPY",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/objcopy"
+		},
+		{
+			"name" : "CMAKE_OBJDUMP",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/objdump"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -710,7 +898,7 @@
 			"value" : ""
 		},
 		{
-			"name" : "CMAKE_RC_COMPILER",
+			"name" : "CMAKE_RANLIB",
 			"properties" : 
 			[
 				{
@@ -719,26 +907,14 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "RC compiler"
+					"value" : "Path to a program."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.17763.0/x86/rc.exe"
+			"value" : "/usr/bin/ranlib"
 		},
 		{
-			"name" : "CMAKE_RC_COMPILER_WORKS",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : ""
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "1"
-		},
-		{
-			"name" : "CMAKE_RC_FLAGS",
+			"name" : "CMAKE_READELF",
 			"properties" : 
 			[
 				{
@@ -747,75 +923,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "Flags for Windows Resource Compiler during all build types."
+					"value" : "Path to a program."
 				}
 			],
-			"type" : "STRING",
-			"value" : "/DWIN32"
-		},
-		{
-			"name" : "CMAKE_RC_FLAGS_DEBUG",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Flags for Windows Resource Compiler during DEBUG builds."
-				}
-			],
-			"type" : "STRING",
-			"value" : "/D_DEBUG"
-		},
-		{
-			"name" : "CMAKE_RC_FLAGS_MINSIZEREL",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Flags for Windows Resource Compiler during MINSIZEREL builds."
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_RC_FLAGS_RELEASE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Flags for Windows Resource Compiler during RELEASE builds."
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
-		},
-		{
-			"name" : "CMAKE_RC_FLAGS_RELWITHDEBINFO",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Flags for Windows Resource Compiler during RELWITHDEBINFO builds."
-				}
-			],
-			"type" : "STRING",
-			"value" : ""
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/readelf"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -827,7 +939,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/CMake/share/cmake-3.14"
+			"value" : "/usr/share/cmake-3.22"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -843,7 +955,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/machine:X86"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_DEBUG",
@@ -859,7 +971,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/debug /INCREMENTAL"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL",
@@ -875,7 +987,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/INCREMENTAL:NO"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELEASE",
@@ -891,7 +1003,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/INCREMENTAL:NO"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO",
@@ -907,7 +1019,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/debug /INCREMENTAL"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_SKIP_INSTALL_RPATH",
@@ -955,7 +1067,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "/machine:X86"
+			"value" : ""
 		},
 		{
 			"name" : "CMAKE_STATIC_LINKER_FLAGS_DEBUG",
@@ -1022,6 +1134,34 @@
 			"value" : ""
 		},
 		{
+			"name" : "CMAKE_STRIP",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/strip"
+		},
+		{
+			"name" : "CMAKE_UNAME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "uname command"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/bin/uname"
+		},
+		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
 			"properties" : 
 			[
@@ -1038,358 +1178,6 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "CPACK_BINARY_7Z",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_BUNDLE",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_CYGWIN",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_DEB",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_DRAGNDROP",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_FREEBSD",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_IFW",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_NSIS",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_NUGET",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_OSXX11",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_PACKAGEMAKER",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_PRODUCTBUILD",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_RPM",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_STGZ",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_TBZ2",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_TGZ",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_TXZ",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_TZ",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_WIX",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_BINARY_ZIP",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
-			"name" : "CPACK_SOURCE_7Z",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Enable to build 7-Zip source packages"
-				}
-			],
-			"type" : "BOOL",
-			"value" : "ON"
-		},
-		{
-			"name" : "CPACK_SOURCE_CYGWIN",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
-				}
-			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
-		},
-		{
 			"name" : "CPACK_SOURCE_RPM",
 			"properties" : 
 			[
@@ -1399,11 +1187,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
+					"value" : "Enable to build RPM source packages"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
+			"type" : "BOOL",
+			"value" : "OFF"
 		},
 		{
 			"name" : "CPACK_SOURCE_TBZ2",
@@ -1415,11 +1203,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
+					"value" : "Enable to build TBZ2 source packages"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
+			"type" : "BOOL",
+			"value" : "ON"
 		},
 		{
 			"name" : "CPACK_SOURCE_TGZ",
@@ -1431,11 +1219,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
+					"value" : "Enable to build TGZ source packages"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
+			"type" : "BOOL",
+			"value" : "ON"
 		},
 		{
 			"name" : "CPACK_SOURCE_TXZ",
@@ -1447,11 +1235,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
+					"value" : "Enable to build TXZ source packages"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
+			"type" : "BOOL",
+			"value" : "ON"
 		},
 		{
 			"name" : "CPACK_SOURCE_TZ",
@@ -1463,11 +1251,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "(This variable does not exist and should not be used)"
+					"value" : "Enable to build TZ source packages"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : ""
+			"type" : "BOOL",
+			"value" : "ON"
 		},
 		{
 			"name" : "CPACK_SOURCE_ZIP",
@@ -1483,7 +1271,7 @@
 				}
 			],
 			"type" : "BOOL",
-			"value" : "ON"
+			"value" : "OFF"
 		},
 		{
 			"name" : "PATCH_VERSION",
@@ -1507,7 +1295,19 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Otus_async_lib/build"
+			"value" : "/home/daniil/cpp/Otus_async_lib/build"
+		},
+		{
+			"name" : "bulk_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
 		},
 		{
 			"name" : "bulk_SOURCE_DIR",
@@ -1519,7 +1319,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "D:/Otus_async_lib"
+			"value" : "/home/daniil/cpp/Otus_async_lib"
 		}
 	],
 	"kind" : "cache",

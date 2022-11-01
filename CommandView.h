@@ -6,6 +6,8 @@
 #include <atomic>
 #include <thread>
 #include <iostream>
+#include <condition_variable>
+#include <queue>
 class CommandView:public Observer{
 public: 
     CommandView(std::shared_ptr<Storage> store):store(store),m_bDone(false),
@@ -26,36 +28,42 @@ public:
     void update(std::deque<Element>& cont) override{
 
         {std::unique_lock<std::mutex> lock(lock_viewer);
-            container = cont;
+            container.push(cont);
         }
-        counter_1 = container.size() + counter_1;
+       // if(counter_1<container.size())counter_1=container.size();
+        counter_1 = counter_1 + cont.size();
        // std::cout<<"update in command view\n";
-        commands_wait.notify_one();
+        commands_wait.notify_all();
+        
     }
 
     void execute(){
+        
         while(!m_bDone){
             std::unique_lock<std::mutex>locker(lock_viewer);
             commands_wait.wait(locker,[&](){return !container.empty() || m_bDone;});
-            counter_2 = container.size() + counter_2;
-            if(!container.empty()){
-                std::cout<<"bulk: "<<container[0]._cmd;
-            for(size_t i=1;i<container.size();++i){
-                std::cout<<", "<<container[i]._cmd;
+            std::deque<Element> temp_c = container.front();
+            counter_2 = counter_2 + temp_c.size();
+            container.pop();
+            if(!temp_c.empty()){
+                std::cout<<"bulk: "<<temp_c[0]._cmd;
+            for(size_t i=1;i<temp_c.size();++i){
+                std::cout<<", "<<temp_c[1]._cmd;
             }
                 std::cout<< '\n';
-                container.clear();
+                temp_c.clear();
             }
         }
     }
 private:
     std::shared_ptr<Storage> store;
-    decltype(store->container_commands) container;
     std::mutex lock_viewer;
     std::atomic<bool>m_bDone = false;
     std::condition_variable commands_wait;
     std::atomic<bool> commands_is_ready = false;
+    std::queue<decltype(store->container_commands)> container;
     std::thread thread_executer;
     int counter_1 = 0;
     int counter_2 = 0;
+    std::mutex print_lock;
 };

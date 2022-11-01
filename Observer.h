@@ -23,7 +23,6 @@ public:
     }
 
     void notifyUpdate(std::deque<Element>& temp_cont){
-        std::unique_lock<std::mutex> lock(lock_actions_command);
         for(unsigned int i=0;i<_observers.size();++i){
             _observers[i]->update(temp_cont);
         }

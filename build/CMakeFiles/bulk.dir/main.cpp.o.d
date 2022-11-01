@@ -188,7 +188,8 @@ CMakeFiles/bulk.dir/main.cpp.o: /home/daniil/cpp/Otus_async_lib/main.cpp \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
  /usr/include/c++/11/bits/fstream.tcc \
  /home/daniil/cpp/Otus_async_lib/State_machine.h \
- /home/daniil/cpp/Otus_async_lib/CommandView.h \
+ /home/daniil/cpp/Otus_async_lib/CommandView.h /usr/include/c++/11/queue \
+ /usr/include/c++/11/bits/stl_heap.h /usr/include/c++/11/bits/stl_queue.h \
  /usr/include/c++/11/functional /usr/include/c++/11/bits/std_function.h \
  /usr/include/c++/11/unordered_map /usr/include/c++/11/bits/hashtable.h \
  /usr/include/c++/11/bits/hashtable_policy.h \
@@ -197,5 +198,4 @@ CMakeFiles/bulk.dir/main.cpp.o: /home/daniil/cpp/Otus_async_lib/main.cpp \
  /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/bits/erase_if.h /usr/include/c++/11/bits/stl_algo.h \
  /usr/include/c++/11/bits/algorithmfwd.h \
- /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/uniform_int_dist.h

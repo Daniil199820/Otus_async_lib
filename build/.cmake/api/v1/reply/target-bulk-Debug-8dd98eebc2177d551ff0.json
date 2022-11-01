@@ -2,10 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "MinSizeRel/bulk.exe"
-		},
-		{
-			"path" : "MinSizeRel/bulk.pdb"
+			"path" : "bulk"
 		}
 	],
 	"backtrace" : 1,
@@ -16,7 +13,9 @@
 			"add_executable",
 			"install",
 			"target_link_libraries",
-			"target_include_directories"
+			"target_compile_options",
+			"target_include_directories",
+			"set_target_properties"
 		],
 		"files" : 
 		[
@@ -48,7 +47,19 @@
 			{
 				"command" : 3,
 				"file" : 0,
+				"line" : 39,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
 				"line" : 27,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 14,
 				"parent" : 0
 			}
 		]
@@ -59,17 +70,40 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG   /W3 -std:c++17"
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-pedantic"
+				},
+				{
+					"fragment" : "-std=gnu++17"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
-					"path" : "D:/Otus_async_lib"
+					"backtrace" : 5,
+					"path" : "/home/daniil/cpp/Otus_async_lib"
 				}
 			],
 			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					6
+				],
+				"standard" : "17"
+			},
 			"sourceIndexes" : 
 			[
 				0
@@ -85,9 +119,6 @@
 		{
 			"backtrace" : 3,
 			"id" : "_State_mch::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "bulk::@6890427a1f51a3e7e1df",
@@ -102,7 +133,7 @@
 		],
 		"prefix" : 
 		{
-			"path" : "C:/Program Files (x86)/bulk"
+			"path" : "/usr/local"
 		}
 	},
 	"link" : 
@@ -110,22 +141,28 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
+				"fragment" : "-g",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:X86 /INCREMENTAL:NO /subsystem:console",
+				"fragment" : "-rdynamic",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "MinSizeRel\\async.lib MinSizeRel\\_State_mch.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"backtrace" : 3,
+				"fragment" : "libasync.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "lib_State_mch.a",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "bulk",
-	"nameOnDisk" : "bulk.exe",
+	"nameOnDisk" : "bulk",
 	"paths" : 
 	{
 		"build" : ".",
