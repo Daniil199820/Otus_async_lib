@@ -1,19 +1,9 @@
 #pragma once
 #include<vector>
-#include<thread>
-#include<mutex>
-#include<deque>
-#include<string>
-
-
-struct Element{
-std::string _cmd;
-int64_t _time;
-};
 
 class Observer{
 public:
-    virtual void update(std::deque<Element>) = 0;
+    virtual void update() = 0;
 };
 
 class Observable{
@@ -22,12 +12,11 @@ public:
         _observers.push_back(observer);
     }
 
-    void notifyUpdate(std::deque<Element>& temp_cont){
+    void notifyUpdate(){
         for(unsigned int i=0;i<_observers.size();++i){
-            _observers[i]->update(temp_cont);
+            _observers[i]->update();
         }
     }
 private:
-    std::vector<Observer*>_observers;   
-    std::mutex lock_actions_command; 
+    std::vector<Observer*>_observers;    
 };

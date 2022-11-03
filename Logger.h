@@ -2,13 +2,12 @@
 
 #include <fstream>
 #include <string>
-#include "Storage.h"
-#include "Observer.h"
-#include <memory>
-class Logger: public Observer{
+
+class Logger{
 public:
- /*   Logger(std::shared_ptr<Storage> store):store(store){
-        store.get()->addObserver(this);
+    static Logger& getInstance(){
+        static Logger instance;
+        return instance;
     }
 
     void open_log(const std::string& filename){
@@ -30,25 +29,17 @@ public:
         }
     }
 
-    void update() override{
-         decltype(store->container_commands) cotr = store->container_commands;
-
-        if(cotr.size()>0){
-            open_log(cotr[0]._cmd + std::to_string(cotr[0]._time));
-            write(cotr[0]._cmd); 
-        
-        for(size_t i=1;i<cotr.size();++i){
-            write(cotr[i]._cmd);
-        }
-            close_log();
-        } 
-    }
-
-    void execute(){}
-
 private:
     std::ofstream file;
     bool flag_opened_file = false;
-    std::shared_ptr<Storage> store;
-    */
+    
+    Logger() = default;
+    Logger(const Logger& root) = delete;
+    Logger& operator=(const Logger&) = delete;
+    Logger(Logger&& root) = delete;
+    Logger& operator=(Logger&&) = delete;
+
+    ~Logger() = default;
+
+
 };
