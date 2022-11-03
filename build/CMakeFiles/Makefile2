@@ -134,8 +134,8 @@ CMakeFiles/_State_mch.dir/clean:
 # Target rules for target CMakeFiles/bulk.dir
 
 # All Build rule for target.
-CMakeFiles/bulk.dir/all: CMakeFiles/async.dir/all
 CMakeFiles/bulk.dir/all: CMakeFiles/_State_mch.dir/all
+CMakeFiles/bulk.dir/all: CMakeFiles/async.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/daniil/cpp/Otus_async_lib/build/CMakeFiles --progress-num=5,6 "Built target bulk"
