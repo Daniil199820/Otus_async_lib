@@ -24,7 +24,7 @@ public:
         }
         std::cout<<"Counter in one thread: "<<counter_1<<"\n";
         std::cout<<"Counter on another thread: "<<counter_2<<"\n";
-        std::cout<<<<"Size of common bufer: "<<container.size()<<"\n";
+        std::cout<<"Size of common bufer: "<<container.size()<<"\n";
     }
 
     void update( std::deque<Element> cont) override{
