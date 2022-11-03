@@ -8,6 +8,7 @@
 #include <iostream>
 #include <condition_variable>
 #include <queue>
+
 class CommandView:public Observer{
 public: 
     CommandView(std::shared_ptr<Storage> store):store(store),m_bDone(false),
@@ -23,18 +24,14 @@ public:
         }
         std::cout<<counter_1<<"\n";
         std::cout<<counter_2<<"\n";
+        std::cout<<container.size()<<"\n";
     }
 
-    void update(std::deque<Element>& cont) override{
-
-        {std::unique_lock<std::mutex> lock(lock_viewer);
-            container.push(cont);
-        }
-       // if(counter_1<container.size())counter_1=container.size();
+    void update( std::deque<Element> cont) override{
+        std::lock_guard<std::mutex> lock(lock_viewer);
+        container.push(cont);
         counter_1 = counter_1 + cont.size();
-       // std::cout<<"update in command view\n";
-        commands_wait.notify_all();
-        
+        commands_wait.notify_one();  
     }
 
     void execute(){
@@ -42,13 +39,14 @@ public:
         while(!m_bDone){
             std::unique_lock<std::mutex>locker(lock_viewer);
             commands_wait.wait(locker,[&](){return !container.empty() || m_bDone;});
+            std::cout<<"We are in execute\n";
             std::deque<Element> temp_c = container.front();
             counter_2 = counter_2 + temp_c.size();
             container.pop();
             if(!temp_c.empty()){
-                std::cout<<"bulk: "<<temp_c[0]._cmd;
+                std::cout<<"bulk: "<<temp_c.at(0)._cmd;
             for(size_t i=1;i<temp_c.size();++i){
-                std::cout<<", "<<temp_c[1]._cmd;
+                std::cout<<", "<<temp_c.at(i)._cmd;
             }
                 std::cout<< '\n';
                 temp_c.clear();

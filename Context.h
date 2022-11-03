@@ -15,58 +15,34 @@ class Context
 {
 public:
   Context(std::size_t BlockSize):m_bDone{false}{
-        //std::cout<<"m_thred in constructor\n";
         auto store = std::make_shared<Storage>();
-        Command_prcer = std::make_unique<CommandModel>(BlockSize,store); 
+        Command_prcer = std::make_shared<CommandModel>(BlockSize,store); 
        // Logger_viewer = std::make_unique<Logger>(store);
-        Console_viewer = std::make_unique<CommandView>(store);
-        //ParceBuffer();  
+        Console_viewer = std::make_shared<CommandView>(store);  
     }
     
 
   void SetBuffer(const char* _Buffer, std::size_t _szSize){
-    std::unique_lock<std::mutex> lock(m_streamLock);
-       // std::cout<<"Set_buffer_1_Contex\n";
-      _ssInputStream.write(_Buffer, _szSize);
-    
-
+   // std::unique_lock<std::mutex> lock(m_streamLock);
+    _ssInputStream.write(_Buffer, _szSize);
     ParceBuffer();
-   // std::cout<<"Set_buffer_2_Contex\n";
-    //m_bNotified = true;
-    
-    //m_streamCheck.notify_one();
-    
   }
 
   void ParceBuffer(){
-    //while(!m_bDone){
-     // std::unique_lock<std::mutex> locker(m_streamLock);
-     // m_streamCheck.wait(locker,[&](){return m_bNotified || m_bDone;});
-      //std::cout<< "we are after cond_var\n";
       std::string tempLine;
       while( std::getline(_ssInputStream,tempLine)){
         Command_prcer->setCommand(std::move(tempLine));
       }
       _ssInputStream.clear();
-     // m_bNotified = false;
     }
-  //}
 
   ~Context(){
     Command_prcer->end_of_f();
-    // std::cout<<"destructor";
-    //  m_bDone = true;
-    //  m_streamCheck.notify_all();
-      
-    //  if (m_thread.joinable()){
-        //std::cout<<"destructor";
-     //   m_thread.join();
-     // }
   }
 
 private:
-  std::unique_ptr<CommandModel> Command_prcer;
-  std::unique_ptr<CommandView> Console_viewer;
+  std::shared_ptr<CommandModel> Command_prcer;
+  std::shared_ptr<CommandView> Console_viewer;
   //std::unique_ptr<Logger> Logger_viewer;
 
   std::stringstream _ssInputStream;

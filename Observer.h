@@ -13,7 +13,7 @@ int64_t _time;
 
 class Observer{
 public:
-    virtual void update(std::deque<Element>&) = 0;
+    virtual void update(std::deque<Element>) = 0;
 };
 
 class Observable{
