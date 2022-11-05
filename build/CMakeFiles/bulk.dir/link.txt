@@ -1,1 +1,1 @@
-/usr/bin/g++ -g -rdynamic CMakeFiles/bulk.dir/main.cpp.o -o bulk  libasync.a lib_State_mch.a 
+/usr/bin/g++ -g -rdynamic CMakeFiles/bulk.dir/main.cpp.o -o bulk  -Wl,-rpath,/home/daniil/cpp/Otus_async_lib/build: libasync.so 

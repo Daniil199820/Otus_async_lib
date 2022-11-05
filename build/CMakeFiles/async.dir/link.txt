@@ -1,2 +1,1 @@
-/usr/bin/ar qc libasync.a CMakeFiles/async.dir/async.cpp.o
-/usr/bin/ranlib libasync.a
+/usr/bin/g++ -fPIC -g -shared -Wl,-soname,libasync.so -o libasync.so CMakeFiles/async.dir/async.cpp.o CMakeFiles/async.dir/State_machine.cpp.o 

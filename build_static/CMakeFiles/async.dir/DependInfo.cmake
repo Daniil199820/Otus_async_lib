@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/daniil/cpp/Otus_async_lib/State_machine.cpp" "CMakeFiles/async.dir/State_machine.cpp.o" "gcc" "CMakeFiles/async.dir/State_machine.cpp.o.d"
   "/home/daniil/cpp/Otus_async_lib/async.cpp" "CMakeFiles/async.dir/async.cpp.o" "gcc" "CMakeFiles/async.dir/async.cpp.o.d"
   )
 

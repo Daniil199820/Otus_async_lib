@@ -195,19 +195,6 @@ async/fast:
 .PHONY : async/fast
 
 #=============================================================================
-# Target rules for targets named _State_mch
-
-# Build rule for target.
-_State_mch: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _State_mch
-.PHONY : _State_mch
-
-# fast build rule for target.
-_State_mch/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_State_mch.dir/build.make CMakeFiles/_State_mch.dir/build
-.PHONY : _State_mch/fast
-
-#=============================================================================
 # Target rules for targets named bulk
 
 # Build rule for target.
@@ -220,12 +207,77 @@ bulk/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/build
 .PHONY : bulk/fast
 
+#=============================================================================
+# Target rules for targets named lib_test
+
+# Build rule for target.
+lib_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lib_test
+.PHONY : lib_test
+
+# fast build rule for target.
+lib_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_test.dir/build.make CMakeFiles/lib_test.dir/build
+.PHONY : lib_test/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googlemock/CMakeFiles/gmock.dir/build.make googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googlemock/CMakeFiles/gmock_main.dir/build.make googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googletest/CMakeFiles/gtest.dir/build.make googletest/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f googletest/googletest/CMakeFiles/gtest_main.dir/build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 State_machine.o: State_machine.cpp.o
 .PHONY : State_machine.o
 
 # target to build an object file
 State_machine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_State_mch.dir/build.make CMakeFiles/_State_mch.dir/State_machine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/async.dir/build.make CMakeFiles/async.dir/State_machine.cpp.o
 .PHONY : State_machine.cpp.o
 
 State_machine.i: State_machine.cpp.i
@@ -233,7 +285,7 @@ State_machine.i: State_machine.cpp.i
 
 # target to preprocess a source file
 State_machine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_State_mch.dir/build.make CMakeFiles/_State_mch.dir/State_machine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/async.dir/build.make CMakeFiles/async.dir/State_machine.cpp.i
 .PHONY : State_machine.cpp.i
 
 State_machine.s: State_machine.cpp.s
@@ -241,7 +293,7 @@ State_machine.s: State_machine.cpp.s
 
 # target to generate assembly for a file
 State_machine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/_State_mch.dir/build.make CMakeFiles/_State_mch.dir/State_machine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/async.dir/build.make CMakeFiles/async.dir/State_machine.cpp.s
 .PHONY : State_machine.cpp.s
 
 async.o: async.cpp.o
@@ -292,6 +344,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bulk.dir/build.make CMakeFiles/bulk.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tests/tests.o: tests/tests.cpp.o
+.PHONY : tests/tests.o
+
+# target to build an object file
+tests/tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_test.dir/build.make CMakeFiles/lib_test.dir/tests/tests.cpp.o
+.PHONY : tests/tests.cpp.o
+
+tests/tests.i: tests/tests.cpp.i
+.PHONY : tests/tests.i
+
+# target to preprocess a source file
+tests/tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_test.dir/build.make CMakeFiles/lib_test.dir/tests/tests.cpp.i
+.PHONY : tests/tests.cpp.i
+
+tests/tests.s: tests/tests.cpp.s
+.PHONY : tests/tests.s
+
+# target to generate assembly for a file
+tests/tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_test.dir/build.make CMakeFiles/lib_test.dir/tests/tests.cpp.s
+.PHONY : tests/tests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -306,9 +382,13 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... _State_mch"
 	@echo "... async"
 	@echo "... bulk"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
+	@echo "... lib_test"
 	@echo "... State_machine.o"
 	@echo "... State_machine.i"
 	@echo "... State_machine.s"
@@ -318,6 +398,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... tests/tests.o"
+	@echo "... tests/tests.i"
+	@echo "... tests/tests.s"
 .PHONY : help
 
 

@@ -6,31 +6,64 @@ set(PROJECT_VERSION 0.0.${PATCH_VERSION})
 project(bulk VERSION ${PROJECT_VERSION})
 
 
-add_executable(bulk main.cpp)
+set(INSTALL_GTEST OFF)
 
-set_target_properties(bulk PROPERTIES
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/tests/GTEST" 
+"googletest")
+
+add_library(async SHARED async.cpp State_machine.cpp)
+add_executable(bulk main.cpp)
+add_executable(lib_test tests/tests.cpp)
+
+
+
+
+set_target_properties(bulk async  lib_test PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
 )
 
 
+target_link_libraries(bulk PRIVATE  
+    async
+)
 
 
+target_include_directories(
+    lib_test PRIVATE
+   ${GTEST_INCLUDE_DIRS}
+   ${CMAKE_CURRENT_SOURCE_DIR}
 
+)
 
 target_include_directories(
     bulk PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
+target_link_libraries(lib_test PRIVATE
+    gtest gtest_main
+    async
+)
 
 
 if (MSVC)
+
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
     target_compile_options(bulk PRIVATE
-        /W4
+        /W3
+    )
+
+    target_compile_options(lib_test PRIVATE
+        /W3
     )
 else ()
     target_compile_options(bulk PRIVATE
+        -Wall -Wextra -pedantic 
+    )
+
+    target_compile_options(lib_test PRIVATE
         -Wall -Wextra -pedantic 
     )
 endif()

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <sstream>
 #include <atomic>
@@ -6,62 +8,56 @@
 #include <condition_variable>
 #include "Model.h"
 #include "CommandView.h"
-
-
+#include "Logger.h"
+#include <memory>
+#include <functional>
 class Context
 {
 public:
-  Context(std::size_t _BlockSize,
-    std::ostream& _osLoggerOut, 
-    std::ostream& _osMainMetricsOut, 
-    std::ostream& _osLogMetricsOut, 
-    std::ostream& _oFileMetricsOut)
-    :m_bDone{false},m_thread{&Context::ParceBuffer,this}{
-        
-    }
-    
-
-  ~Context(){
-      m_bDone = true;
-      m_streamCheck.notify_all();
-      if (m_thread.joinable()){
-        m_thread.join();
-      }
-  }
-
-  void SetBuffer(const char* a_Buffer, std::size_t a_szSize){
-    {std::unique_lock<std::mutex> lock(m_streamLock);
-      _ssInputStream.write(a_Buffer, a_szSize);
+  Context(std::size_t BlockSize,std::ostream& out=std::cout):m_bDone{false}{
+        Store = std::make_shared<Storage>();
+        Command_prcer = std::make_shared<CommandModel>(BlockSize,Store); 
+        Logger_viewer = std::make_shared<Logger>(Store);
+        Console_viewer = std::make_shared<CommandView>(Store,out);  
+        Logger_viewer->SetContextName(this);
     }
 
-    m_bNotified = true;
-    m_streamCheck.notify_one();
-    
+  Context(std::size_t BlockSize,std::stringstream& out):m_bDone{false}{
+        Store = std::make_shared<Storage>();
+        Command_prcer = std::make_shared<CommandModel>(BlockSize,Store); 
+        Logger_viewer = std::make_shared<Logger>(Store);
+        Console_viewer = std::make_shared<CommandView>(Store,out);  
+        Logger_viewer->SetContextName(this);
+    }  
+
+  void SetBuffer(const char* _Buffer, std::size_t _szSize){
+    _ssInputStream.write(_Buffer, _szSize);
+    ParceBuffer();
   }
 
   void ParceBuffer(){
-    while(!m_bDone){
-      std::unique_lock<std::mutex> locker(m_streamLock);
-      m_streamCheck.wait(locker,[&](){return m_bNotified || m_bDone;});
       std::string tempLine;
       while( std::getline(_ssInputStream,tempLine)){
-        m_pCommander->setCommand(std::move(tempLine));
+        Command_prcer->setCommand(std::move(tempLine));
       }
-      m_pCommander->end_of_f();
       _ssInputStream.clear();
-      m_bNotified = false;
     }
+
+  ~Context(){
+    Command_prcer->end_of_f();
   }
 
 private:
-  std::shared_ptr<CommandModel> m_pCommander;
-  std::shared_ptr<CommandView> m_pExecuter;
-  std::shared_ptr<Logger> m_pLogger;
+  std::shared_ptr<CommandModel> Command_prcer;
+  std::shared_ptr<CommandView> Console_viewer;
+  std::shared_ptr<Logger> Logger_viewer;
+  std::shared_ptr<Storage> Store;
 
   std::stringstream _ssInputStream;
 
-  std::atomic<bool> m_bDone;
-  std::atomic<bool> m_bNotified;
+  std::atomic<bool> m_bDone = false;
+  std::atomic<bool> m_bNotified = false;
+  std::atomic<bool> thread_is_created = false;
   std::thread m_thread;
   std::mutex m_streamLock;
   std::condition_variable m_streamCheck;

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/async.dir/State_machine.cpp.o"
+  "CMakeFiles/async.dir/State_machine.cpp.o.d"
   "CMakeFiles/async.dir/async.cpp.o"
   "CMakeFiles/async.dir/async.cpp.o.d"
   "libasync.a"

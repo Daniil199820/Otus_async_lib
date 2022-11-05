@@ -92,8 +92,7 @@ bulk_EXTERNAL_OBJECTS =
 
 bulk: CMakeFiles/bulk.dir/main.cpp.o
 bulk: CMakeFiles/bulk.dir/build.make
-bulk: libasync.a
-bulk: lib_State_mch.a
+bulk: libasync.so
 bulk: CMakeFiles/bulk.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/daniil/cpp/Otus_async_lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bulk"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bulk.dir/link.txt --verbose=$(VERBOSE)
