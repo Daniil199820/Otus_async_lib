@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "bulk"
+			"path" : "lib_test"
 		}
 	],
 	"backtrace" : 1,
@@ -11,11 +11,9 @@
 		"commands" : 
 		[
 			"add_executable",
-			"install",
 			"target_link_libraries",
 			"target_compile_options",
-			"target_include_directories",
-			"set_target_properties"
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -29,37 +27,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 15,
+				"line" : 18,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 73,
+				"line" : 46,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 27,
+				"line" : 68,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 62,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 0,
-				"line" : 39,
-				"parent" : 0
-			},
-			{
-				"command" : 5,
-				"file" : 0,
-				"line" : 21,
+				"line" : 34,
 				"parent" : 0
 			}
 		]
@@ -73,15 +59,15 @@
 					"fragment" : "-g"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 3,
 					"fragment" : "-Wall"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 3,
 					"fragment" : "-Wextra"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 3,
 					"fragment" : "-pedantic"
 				},
 				{
@@ -91,8 +77,18 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
 					"path" : "/home/daniil/cpp/Otus_async_lib"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest"
 				}
 			],
 			"language" : "CXX",
@@ -100,7 +96,7 @@
 			{
 				"backtraces" : 
 				[
-					6
+					2
 				],
 				"standard" : "17"
 			},
@@ -113,25 +109,19 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 3,
+			"backtrace" : 2,
 			"id" : "async::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "gtest::@f95b5c00bd49b3b4698d"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "gtest_main::@f95b5c00bd49b3b4698d"
 		}
 	],
-	"id" : "bulk::@6890427a1f51a3e7e1df",
-	"install" : 
-	{
-		"destinations" : 
-		[
-			{
-				"backtrace" : 2,
-				"path" : "bin"
-			}
-		],
-		"prefix" : 
-		{
-			"path" : "/usr/local"
-		}
-	},
+	"id" : "lib_test::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -141,23 +131,38 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-rdynamic",
+				"fragment" : "-pthread   -rdynamic",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/daniil/cpp/Otus_async_lib/build:",
+				"fragment" : "-Wl,-rpath,/home/daniil/cpp/Otus_async_lib/build",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
+				"fragment" : "lib/libgtest.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "lib/libgtest_main.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
 				"fragment" : "libasync.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "lib/libgtest.a",
 				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "bulk",
-	"nameOnDisk" : "bulk",
+	"name" : "lib_test",
+	"nameOnDisk" : "lib_test",
 	"paths" : 
 	{
 		"build" : ".",
@@ -178,7 +183,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "main.cpp",
+			"path" : "tests/tests.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

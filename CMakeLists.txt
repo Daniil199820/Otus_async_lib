@@ -8,6 +8,8 @@ project(bulk VERSION ${PROJECT_VERSION})
 
 set(INSTALL_GTEST OFF)
 
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
+
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/tests/GTEST" 
 "googletest")
 
