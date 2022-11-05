@@ -21,14 +21,7 @@ public:
         Console_viewer = std::make_shared<CommandView>(Store,out);  
         Logger_viewer->SetContextName(this);
     }
-
-  Context(std::size_t BlockSize,std::stringstream& out):m_bDone{false}{
-        Store = std::make_shared<Storage>();
-        Command_prcer = std::make_shared<CommandModel>(BlockSize,Store); 
-        Logger_viewer = std::make_shared<Logger>(Store);
-        Console_viewer = std::make_shared<CommandView>(Store,out);  
-        Logger_viewer->SetContextName(this);
-    }  
+ 
 
   void SetBuffer(const char* _Buffer, std::size_t _szSize){
     _ssInputStream.write(_Buffer, _szSize);
