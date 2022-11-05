@@ -1,4 +1,4 @@
-# Install script for directory: /home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest
+# Install script for directory: /home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

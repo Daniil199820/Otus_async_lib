@@ -70,18 +70,18 @@ include googletest/googletest/CMakeFiles/gtest.dir/progress.make
 include googletest/googletest/CMakeFiles/gtest.dir/flags.make
 
 googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: googletest/googletest/CMakeFiles/gtest.dir/flags.make
-googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: ../tests/GTEST/googletest/src/gtest-all.cc
+googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: ../GTEST_LINUX/googletest/src/gtest-all.cc
 googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: googletest/googletest/CMakeFiles/gtest.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniil/cpp/Otus_async_lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
-	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googletest && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -MF CMakeFiles/gtest.dir/src/gtest-all.cc.o.d -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest/src/gtest-all.cc
+	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googletest && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -MF CMakeFiles/gtest.dir/src/gtest-all.cc.o.d -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest/src/gtest-all.cc
 
 googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest.dir/src/gtest-all.cc.i"
-	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googletest && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
+	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googletest && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest/src/gtest-all.cc > CMakeFiles/gtest.dir/src/gtest-all.cc.i
 
 googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest.dir/src/gtest-all.cc.s"
-	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googletest && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
+	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googletest && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest/src/gtest-all.cc -o CMakeFiles/gtest.dir/src/gtest-all.cc.s
 
 # Object files for target gtest
 gtest_OBJECTS = \
@@ -106,6 +106,6 @@ googletest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : googletest/googletest/CMakeFiles/gtest.dir/clean
 
 googletest/googletest/CMakeFiles/gtest.dir/depend:
-	cd /home/daniil/cpp/Otus_async_lib/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniil/cpp/Otus_async_lib /home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest /home/daniil/cpp/Otus_async_lib/build /home/daniil/cpp/Otus_async_lib/build/googletest/googletest /home/daniil/cpp/Otus_async_lib/build/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniil/cpp/Otus_async_lib/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniil/cpp/Otus_async_lib /home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest /home/daniil/cpp/Otus_async_lib/build /home/daniil/cpp/Otus_async_lib/build/googletest/googletest /home/daniil/cpp/Otus_async_lib/build/googletest/googletest/CMakeFiles/gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : googletest/googletest/CMakeFiles/gtest.dir/depend
 

@@ -8,7 +8,7 @@
 	"installers" : [],
 	"paths" : 
 	{
-		"build" : "googletest/googlemock",
-		"source" : "tests/GTEST/googlemock"
+		"build" : "googletest/googletest",
+		"source" : "GTEST_LINUX/googletest"
 	}
 }

@@ -70,18 +70,18 @@ include googletest/googlemock/CMakeFiles/gmock.dir/progress.make
 include googletest/googlemock/CMakeFiles/gmock.dir/flags.make
 
 googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: googletest/googlemock/CMakeFiles/gmock.dir/flags.make
-googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: ../tests/GTEST/googlemock/src/gmock-all.cc
+googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: ../GTEST_LINUX/googlemock/src/gmock-all.cc
 googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: googletest/googlemock/CMakeFiles/gmock.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/daniil/cpp/Otus_async_lib/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
-	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -MF CMakeFiles/gmock.dir/src/gmock-all.cc.o.d -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/daniil/cpp/Otus_async_lib/tests/GTEST/googlemock/src/gmock-all.cc
+	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -MF CMakeFiles/gmock.dir/src/gmock-all.cc.o.d -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googlemock/src/gmock-all.cc
 
 googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock.dir/src/gmock-all.cc.i"
-	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniil/cpp/Otus_async_lib/tests/GTEST/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
+	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googlemock/src/gmock-all.cc > CMakeFiles/gmock.dir/src/gmock-all.cc.i
 
 googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock.dir/src/gmock-all.cc.s"
-	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/cpp/Otus_async_lib/tests/GTEST/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
+	cd /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googlemock/src/gmock-all.cc -o CMakeFiles/gmock.dir/src/gmock-all.cc.s
 
 # Object files for target gmock
 gmock_OBJECTS = \
@@ -106,6 +106,6 @@ googletest/googlemock/CMakeFiles/gmock.dir/clean:
 .PHONY : googletest/googlemock/CMakeFiles/gmock.dir/clean
 
 googletest/googlemock/CMakeFiles/gmock.dir/depend:
-	cd /home/daniil/cpp/Otus_async_lib/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniil/cpp/Otus_async_lib /home/daniil/cpp/Otus_async_lib/tests/GTEST/googlemock /home/daniil/cpp/Otus_async_lib/build /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/daniil/cpp/Otus_async_lib/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/daniil/cpp/Otus_async_lib /home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googlemock /home/daniil/cpp/Otus_async_lib/build /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock /home/daniil/cpp/Otus_async_lib/build/googletest/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : googletest/googlemock/CMakeFiles/gmock.dir/depend
 

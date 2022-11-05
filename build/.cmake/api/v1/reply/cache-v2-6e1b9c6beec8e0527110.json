@@ -1755,7 +1755,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googlemock"
+			"value" : "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googlemock"
 		},
 		{
 			"name" : "gmock_build_tests",
@@ -1819,7 +1819,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST"
+			"value" : "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX"
 		},
 		{
 			"name" : "gtest_BINARY_DIR",
@@ -1855,7 +1855,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest"
+			"value" : "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest"
 		},
 		{
 			"name" : "gtest_build_samples",

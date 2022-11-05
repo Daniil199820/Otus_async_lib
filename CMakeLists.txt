@@ -10,7 +10,7 @@ set(INSTALL_GTEST OFF)
 
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
 
-add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/tests/GTEST" 
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/GTEST_LINUX" 
 "googletest")
 
 add_library(async SHARED async.cpp State_machine.cpp)

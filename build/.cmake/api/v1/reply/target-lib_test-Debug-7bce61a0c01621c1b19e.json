@@ -83,12 +83,12 @@
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest/include"
+					"path" : "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest/include"
 				},
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest"
+					"path" : "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest"
 				}
 			],
 			"language" : "CXX",

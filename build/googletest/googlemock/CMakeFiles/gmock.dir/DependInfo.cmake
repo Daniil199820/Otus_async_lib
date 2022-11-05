@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googlemock/src/gmock-all.cc" "googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o" "gcc" "googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d"
+  "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googlemock/src/gmock-all.cc" "googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o" "gcc" "googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d"
   )
 
 # Targets to which this target links.

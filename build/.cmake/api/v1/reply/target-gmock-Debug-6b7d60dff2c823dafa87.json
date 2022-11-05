@@ -19,8 +19,8 @@
 		],
 		"files" : 
 		[
-			"tests/GTEST/googletest/cmake/internal_utils.cmake",
-			"tests/GTEST/googlemock/CMakeLists.txt"
+			"GTEST_LINUX/googletest/cmake/internal_utils.cmake",
+			"GTEST_LINUX/googlemock/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -75,21 +75,21 @@
 			[
 				{
 					"backtrace" : 5,
-					"path" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googlemock/include"
+					"path" : "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googlemock/include"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googlemock"
-				},
-				{
-					"backtrace" : 5,
-					"isSystem" : true,
-					"path" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest/include"
+					"path" : "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googlemock"
 				},
 				{
 					"backtrace" : 5,
 					"isSystem" : true,
-					"path" : "/home/daniil/cpp/Otus_async_lib/tests/GTEST/googletest"
+					"path" : "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest/include"
+				},
+				{
+					"backtrace" : 5,
+					"isSystem" : true,
+					"path" : "/home/daniil/cpp/Otus_async_lib/GTEST_LINUX/googletest"
 				}
 			],
 			"language" : "CXX",
@@ -112,7 +112,7 @@
 	"paths" : 
 	{
 		"build" : "googletest/googlemock",
-		"source" : "tests/GTEST/googlemock"
+		"source" : "GTEST_LINUX/googlemock"
 	},
 	"sourceGroups" : 
 	[
@@ -129,7 +129,7 @@
 		{
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
-			"path" : "tests/GTEST/googlemock/src/gmock-all.cc",
+			"path" : "GTEST_LINUX/googlemock/src/gmock-all.cc",
 			"sourceGroupIndex" : 0
 		}
 	],
