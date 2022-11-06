@@ -12,7 +12,6 @@
 
 set(CPACK_BUILD_SOURCE_DIRS "/home/daniil/cpp/Otus_async_lib;/home/daniil/cpp/Otus_async_lib/build")
 set(CPACK_CMAKE_GENERATOR "Unix Makefiles")
-set(CPACK_COMPONENTS_ALL "")
 set(CPACK_COMPONENT_UNSPECIFIED_HIDDEN "TRUE")
 set(CPACK_COMPONENT_UNSPECIFIED_REQUIRED "TRUE")
 set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-3.22/Templates/CPack.GenericDescription.txt")

@@ -27,13 +27,13 @@
 		{
 			"backtrace" : 1,
 			"component" : "Unspecified",
-			"destination" : "lib",
+			"destination" : "bin",
 			"paths" : 
 			[
-				"libasync.so"
+				"bulk"
 			],
-			"targetId" : "async::@6890427a1f51a3e7e1df",
-			"targetIndex" : 0,
+			"targetId" : "bulk::@6890427a1f51a3e7e1df",
+			"targetIndex" : 1,
 			"type" : "target"
 		}
 	],
