@@ -187,9 +187,9 @@ CMakeFiles/bulk.dir/clean:
 # Target rules for target CMakeFiles/lib_test.dir
 
 # All Build rule for target.
+CMakeFiles/lib_test.dir/all: CMakeFiles/async.dir/all
 CMakeFiles/lib_test.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 CMakeFiles/lib_test.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
-CMakeFiles/lib_test.dir/all: CMakeFiles/async.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_test.dir/build.make CMakeFiles/lib_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/lib_test.dir/build.make CMakeFiles/lib_test.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/daniil/cpp/Otus_async_lib/build/CMakeFiles --progress-num=14,15 "Built target lib_test"

@@ -11,6 +11,7 @@
 		"commands" : 
 		[
 			"add_library",
+			"install",
 			"set_target_properties"
 		],
 		"files" : 
@@ -30,6 +31,12 @@
 			},
 			{
 				"command" : 1,
+				"file" : 0,
+				"line" : 77,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
 				"file" : 0,
 				"line" : 23,
 				"parent" : 0
@@ -59,7 +66,7 @@
 			{
 				"backtraces" : 
 				[
-					2
+					3
 				],
 				"standard" : "17"
 			},
@@ -71,6 +78,24 @@
 		}
 	],
 	"id" : "async::@6890427a1f51a3e7e1df",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "/home/daniil/cpp/Otus_async_lib"
+			},
+			{
+				"backtrace" : 2,
+				"path" : "/home/daniil/cpp/Otus_async_lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/usr/local"
+		}
+	},
 	"link" : 
 	{
 		"commandFragments" : 

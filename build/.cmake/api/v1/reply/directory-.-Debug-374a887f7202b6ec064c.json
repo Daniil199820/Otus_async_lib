@@ -19,6 +19,12 @@
 				"file" : 0,
 				"line" : 75,
 				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 77,
+				"parent" : 0
 			}
 		]
 	},
@@ -34,6 +40,18 @@
 			],
 			"targetId" : "bulk::@6890427a1f51a3e7e1df",
 			"targetIndex" : 1,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "/home/daniil/cpp/Otus_async_lib",
+			"paths" : 
+			[
+				"libasync.so"
+			],
+			"targetId" : "async::@6890427a1f51a3e7e1df",
+			"targetIndex" : 0,
 			"type" : "target"
 		}
 	],

@@ -110,15 +110,15 @@
 	[
 		{
 			"backtrace" : 2,
+			"id" : "async::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "gtest::@f95b5c00bd49b3b4698d"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "gtest_main::@f95b5c00bd49b3b4698d"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "async::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "lib_test::@6890427a1f51a3e7e1df",
