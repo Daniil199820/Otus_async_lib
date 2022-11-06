@@ -72,7 +72,7 @@ endif()
 
 
 
-install(TARGETS bulk RUNTIME DESTINATION bin)
+install(TARGETS async RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
