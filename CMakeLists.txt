@@ -73,7 +73,7 @@ else ()
     )
 endif()
 
-
+add_dependencies( async libasync )
 
 install(TARGETS bulk RUNTIME DESTINATION bin)
 
