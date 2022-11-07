@@ -13,6 +13,8 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/GTEST_LINUX" 
 "googletest")
 
+include(GNUInstallDirs)
+
 add_library(async SHARED async.cpp State_machine.cpp)
 add_executable(bulk main.cpp)
 add_executable(lib_test tests/tests.cpp)
@@ -23,6 +25,7 @@ add_executable(lib_test tests/tests.cpp)
 set_target_properties(bulk async  lib_test PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
+    PUBLIC_HEADER async.h
 )
 
 
@@ -74,7 +77,9 @@ endif()
 
 install(TARGETS bulk RUNTIME DESTINATION bin)
 
-install(TARGETS async LIBRARY DESTINATION ${CMAKE_CURRENT_SOURCE_DIR} PUBLIC_HEADER DESTINATION ${CMAKE_CURRENT_SOURCE_DIR})
+install(TARGETS async
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 set(CPACK_GENERATOR DEB)
 
